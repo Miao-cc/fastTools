@@ -1,0 +1,20 @@
+#beam num  , x axis offset (beam1 -> beam6, y axis offset (beam1 -> beam13); Negative -> Positive
+beam1   0      0   
+beam2   5.9    0
+beam3   2.95   5.11
+beam4  -2.95   5.11
+beam5  -5.9    0
+beam6  -2.95  -5.11
+beam7   2.95  -5.11
+beam8   11.8   0
+beam9   8.85   5.11
+beam10  5.9    10.22
+beam11  0      10.22
+beam12 -5.9    10.22
+beam13 -8.85   5.11 
+beam14 -11.8   0
+beam15 -8.85  -5.11
+beam16 -5.9   -10.22
+beam17  0     -10.22
+beam18  5.9   -10.22
+beam19  8.85  -5.11
