@@ -1,4 +1,5 @@
 import sys
+import os
 import ephem
 import math
 import datetime as dt
@@ -16,6 +17,8 @@ from itertools import islice
 class position:
     '''
     call
+    def __init__(self, RotateAngel , beam1Point, MJDTime = '', sourcePoint = '', picname = ''):
+    a = fastTools.beam.beamPositionRead()
     a = fastTools.beam.beamPositionRead()
 
 
@@ -26,7 +29,8 @@ class position:
 
     #read beam info and return the relative position in rotate angel 0
     def beamPositionRead(self):
-        filename = 'beamPosition.txt'
+        current_path = os.path.dirname(__file__)
+        filename = current_path+'/beamPosition.txt'
         beam = open(filename,'r')
         position = {}
         for line in islice(beam, 1, None):
