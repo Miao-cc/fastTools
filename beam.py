@@ -103,7 +103,7 @@ class plotpic(position):
         sourcePoint = self.sourcePoint
         if (sourcePoint != ''):
             sourceRA = sourcePoint._ra
-            sourceDEC = sourcePoint._ra
+            sourceDEC = sourcePoint._dec
         else:
             sourceRA = ''
             sourceDEC = ''
