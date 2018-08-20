@@ -19,7 +19,7 @@ class survey:
     survey.surveyPoint():
     '''
     def __init__(self, TimeMJD = '', decJ2000 = ''):
-        self.TimeMJD = float(TimeMJD)
+        self.TimeMJD = TimeMJD
         self.decJ2000 = decJ2000
 
     def MJDtransit(self):
@@ -39,7 +39,7 @@ class survey:
     
     def surveyPoint(self):
         #input parameters
-        TimeMJD = self.TimeMJD
+        TimeMJD = self.TimeMJD 
         decJ2000 = self.decJ2000
     
         src = ephem.FixedBody()
