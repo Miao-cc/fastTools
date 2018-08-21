@@ -38,6 +38,7 @@ class survey:
     
     
     def surveyPoint(self):
+
         #input parameters
         TimeMJD = self.TimeMJD
         decJ2000 = self.decJ2000
@@ -61,12 +62,23 @@ class survey:
         FAST_az = 90.- float(src.alt)*360./2/math.pi
         FAST_el = 270.- float(src.az)*360./2/math.pi
     
+        #---------------------------------- 
         #transit localtime(UTC+8) to UTC time(UTC+0)
-        t_transit = Time(ephem.localtime(ttrans),scale='utc')
-    
+        #t_transit = Time(ephem.localtime(ttrans),scale='utc')
+        #Transit_utc = datetime.strptime(str(t_transit),"%Y-%m-%d %H:%M:%S.%f")
+
+        #---------------------------------- 
         # Compensate start time & transit time
         # transit time module time format to datetime module time format
-        Transit_utc = datetime.strptime(str(t_transit),"%Y-%m-%d %H:%M:%S.%f")
+        dtrans = ttrans
+        Dtransit = str(Time(ephem.localtime(dtrans),scale='utc')).split('.')
+        if Dtransit.__len__()==1:
+                Dtransit[0]=Dtransit[0]+'.000001'
+        else:
+                Dtransit[0]=Dtransit[0]+'.'+Dtransit[1]
+        d_transit = datetime.strptime(Dtransit[0],"%Y-%m-%d %H:%M:%S.%f")
+        #---------------------------------- 
+        Transit_utc = d_transit
         Delta = Transit_utc - Starttime_utc
         Offset_sec = 236 * float(Delta.seconds)/24./3600.   # compensate periodical delay and modify start_time to beam centre 
         

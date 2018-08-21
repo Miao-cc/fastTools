@@ -68,5 +68,10 @@ print "potinRA, pointDec, pointBJTime = fastsurvey.surveyPoint()"
 print "Point RA: %s DEC: %s when %s" %(potinRA, pointDec, pointBJTime)
 print "Point RA: %s DEC: %s when %s" %(potinRA, pointDec, pointBJTime)
 
+a = fastPoint.survey(TimeMJD = '58313.7173714', decJ2000 = '-12:30:56.8')j
 
+print a.decJ2000
+print a.TimeMJD
+print a.MJDtransit()
+print a.surveyPoint()
 

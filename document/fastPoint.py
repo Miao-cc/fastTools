@@ -19,7 +19,7 @@ class survey:
     survey.surveyPoint():
     '''
     def __init__(self, TimeMJD = '', decJ2000 = ''):
-        self.TimeMJD = TimeMJD
+        self.TimeMJD = float(TimeMJD)
         self.decJ2000 = decJ2000
 
     def MJDtransit(self):
@@ -39,7 +39,7 @@ class survey:
     
     def surveyPoint(self):
         #input parameters
-        TimeMJD = self.TimeMJD 
+        TimeMJD = self.TimeMJD
         decJ2000 = self.decJ2000
     
         src = ephem.FixedBody()
@@ -66,6 +66,8 @@ class survey:
     
         # Compensate start time & transit time
         # transit time module time format to datetime module time format
+        print "t_transit", str(t_transit)
+
         Transit_utc = datetime.strptime(str(t_transit),"%Y-%m-%d %H:%M:%S.%f")
         Delta = Transit_utc - Starttime_utc
         Offset_sec = 236 * float(Delta.seconds)/24./3600.   # compensate periodical delay and modify start_time to beam centre 
