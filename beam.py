@@ -175,8 +175,8 @@ class plotpic(position):
     
         #
     
-        plt.annotate('N', xy=(-15,13),xytext=(-15,17),arrowprops=dict(facecolor='black'),horizontalalignment='left', verticalalignment='top')
-        plt.annotate('E', xy=(-13,15),xytext=(-17,15),arrowprops=dict(facecolor='black'),horizontalalignment='left', verticalalignment='top')
+        plt.annotate('S', xy=(-15,13),xytext=(-15,17),arrowprops=dict(facecolor='black'),horizontalalignment='left', verticalalignment='top')
+        plt.annotate('W', xy=(-13,15),xytext=(-17,15),arrowprops=dict(facecolor='black'),horizontalalignment='left', verticalalignment='top')
     
     
         #plt.legend(handles=legendList,labels=legendWordList,loc='best')
